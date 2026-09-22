@@ -1,0 +1,17 @@
+name : profolio
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name : Check HTML File
+        run: test -f index.html
+      - name : Display success message
+        run: echo "protfolio website ci completed successfully"
